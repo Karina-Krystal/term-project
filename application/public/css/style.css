@@ -5,15 +5,32 @@
 }
 
 h1{
-  padding: 80px 0px 0px 430px;
+  text-align: center;
   font: 50px "Lucida Grande";
   color: rgb(168, 56, 56);
+  background-color: rgba(168,56, 56, 0.51);
 }
 
+nav{
+  list-style: none;
+  padding: .5em;
+  display: grid;
+  grid-auto-flow: column;
+  gap: .5rem;
+}
+.container{
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-areas: 
+  "header"
+  "main content";
+}
 h2{
   padding: 80px 0px 0px 20px;
   font: 25px "sans-serif";
 }
+
+
 body {
   padding: 00px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -29,6 +46,7 @@ input[type~="text password submit" ]{
 
 a { 
   padding: 7px;
+  margin-right: 10px;
   color: rgb(168, 56, 56);
   border: 3px solid rgb(168, 56, 56);
   border-radius: 25%;
@@ -37,11 +55,11 @@ a {
 }
 
 a:hover{
-  background-color: black;
+  background-color: rgba(168, 56, 56, 0.51);
 }
 
 button:hover{
-  background-color: black;
+  background-color: rgba(168,56, 56, 0.51);
 }
 
 form{
@@ -61,11 +79,12 @@ img{
   box-shadow: 0px 0px 0px rgb(168, 56, 56);
   background-color: none;
 }
-
+/*
+//this is for the nav indentation
 .indent{
   padding-left: 455px;
 }
-
+*/
 .space{
   padding-top: 15px;
 }
@@ -84,8 +103,8 @@ img{
 }
 
 footer{
-  padding-top: 50px;
-  padding-left: 20px;
+  padding-top: end;
+  text-align: center;
 }
 
 .invalid-text{

@@ -13,6 +13,7 @@ if(firstChar.toLowerCase() === firstChar || firstChar === firstChar.toUpperCase(
 } else {
     usernameElement.classList.add('invalid-text');
     usernameElement.classList.remove('valid-text');
+    usernameError.textContent="needs to be a-z or A-Z";
     //should print "username must start with a-z or A-z"
 }
 if(username.length>3){
@@ -26,62 +27,79 @@ if(username.length>3){
 });
 
 
-
 //dealing with PASSWORD validation
-document.getElementById('password').addEventListener('input', function(ev){
-    let passwordElement =ev.target;
-    let password = passwordElement.value;
+// document.getElementById('password').addEventListener('submit', function(event){
+//     let password = document.getElementById('password').value
+//     let confirmPassword = document.getElementById('password2').value
+//     let passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%])[A-Za-z\d!@#$%]{8,}$/;
+
+//     if(!password.match(passwordPattern)){
+//         document.getElementById('message').textContent = 'password must match pattern'
+//         event.preventDefault()
+//     }
+//     else if(password != confirmPassword){
+//         document.getElementById('message').textContent = 'password must match '
+//         event.preventDefault()
+//     }
+//     else{
+//         document.getElementById('message').textContent = '';
+//     }
+// })
+
+// document.getElementById('password').addEventListener('input', function(ev){
+//     let passwordElement =ev.target;
+//     let password = passwordElement.value;
     
-    //if password is 8 or  more characters
-    if(password.length>7){
-        passwordElement.classList.add('valid-text');
-        passwordElement.classList.remove('invalid-text');
+//     //if password is 8 or  more characters
+//     if(password.length>7){
+//         passwordElement.classList.add('valid-text');
+//         passwordElement.classList.remove('invalid-text');
 
-        // AND if password contains at least 1 UPPER CASE LETTER
-        for( i = 0; i < password.length; i++){
-            var charAtIndex = password.charAt(i);
-            if(charAtIndex.toUpperCase === charAtIndex){ // if UPPERCASE 
-                //it IS an upperCase Letter
+//         // AND if password contains at least 1 UPPER CASE LETTER
+//         for( i = 0; i < password.length; i++){
+//             var charAtIndex = password.charAt(i);
+//             if(charAtIndex.toUpperCase === charAtIndex){ // if UPPERCASE 
+//                 //it IS an upperCase Letter
 
-                //check if input contains 1 number (at least or exactly 1?)
-                for( i = 0; i < password.length; i++){
-                    var charAtIndex = password.charAt(i);
-                    if (charAtIndex >= '0' && charAtIndex <= '9') { //if NUMBER
-                        // it is a number
+//                 //check if input contains 1 number (at least or exactly 1?)
+//                 for( i = 0; i < password.length; i++){
+//                     var charAtIndex = password.charAt(i);
+//                     if (charAtIndex >= '0' && charAtIndex <= '9') { //if NUMBER
+//                         // it is a number
                         
-                        //check for characters: / * - + ! @ # $ ^ ~ []
-                        for( i = 0; i < password.length; i++){
-                            var charAtIndex = password.charAt(i);
-                            if (charAtIndex = '/', '*', '-', '+', '!', '@', '#', '$', '^', '~', '[', ']') { //is special character
-                                passwordElement.classList.add('valid-text');
-                                passwordElement.classList.remove('invalid-text');
-                            }
-                            else {
-                                //no special character
-                                passwordElement.classList.add('invalid-text');
-                                passwordElement.classList.remove('valid-text');
-                                // print "password must be contain SPECIAL CHARACTER"
-                            }
-                        }
-                    } 
-                    else { //if no number
-                        passwordElement.classList.add('invalid-text');
-                        passwordElement.classList.remove('valid-text');
-                        // print "password must be contain number"
-                    }          
-                }   
-            } else { // if NO uppercase
-                passwordElement.classList.add('invalid-text');
-                passwordElement.classList.remove('valid-text');
-                // print "password must be contain uppercase"
-                } 
-        } 
-    } else { // if not 8 or more chars 
-        passwordElement.classList.add('invalid-text');
-        passwordElement.classList.remove('valid-text');
-        // print "password must be 8 or more characters"
-        }
-});
+//                         //check for characters: / * - + ! @ # $ ^ ~ []
+//                         for( i = 0; i < password.length; i++){
+//                             var charAtIndex = password.charAt(i);
+//                             if (charAtIndex = '/', '*', '-', '+', '!', '@', '#', '$', '^', '~', '[', ']') { //is special character
+//                                 passwordElement.classList.add('valid-text');
+//                                 passwordElement.classList.remove('invalid-text');
+//                             }
+//                             else {
+//                                 //no special character
+//                                 passwordElement.classList.add('invalid-text');
+//                                 passwordElement.classList.remove('valid-text');
+//                                 // print "password must be contain SPECIAL CHARACTER"
+//                             }
+//                         }
+//                     } 
+//                     else { //if no number
+//                         passwordElement.classList.add('invalid-text');
+//                         passwordElement.classList.remove('valid-text');
+//                         // print "password must be contain number"
+//                     }          
+//                 }   
+//             } else { // if NO uppercase
+//                 passwordElement.classList.add('invalid-text');
+//                 passwordElement.classList.remove('valid-text');
+//                 // print "password must be contain uppercase"
+//                 } 
+//         } 
+//     } else { // if not 8 or more chars 
+//         passwordElement.classList.add('invalid-text');
+//         passwordElement.classList.remove('valid-text');
+//         // print "password must be 8 or more characters"
+//         }
+// });
 
 
 //  dealing with  CONFIRM PASSWORD

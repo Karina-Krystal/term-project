@@ -1,0 +1,42 @@
+            <h2> Registration Form </h2>  
+       
+        <form action="action.php">
+            <p>   
+                <label for="username">Username</label>
+                <input class="box-shadow" type="text" name="username" id="username" placeholder="Username" minlength="3" usernamePattern = "/^(?=[a-zA-Z])[a-zA-Z0-9_-]{3,}$/" required>
+                <span id="usernameError" style="color: red;"></span>
+                <p style="font-size: .5rem; color:black"> Username must begin with a letter, and 3+ alphnumeric characters</p>
+                
+            </p><p>
+                <label for="email">Email</label>
+                <input class="box-shadow" type="email" name="email" id="email" placeholder="Email" required>
+            </p><p>
+                <label for="password">Password</label>
+                <input class="box-shadow" type="password" name="password" id="password" placeholder="Password" required>
+                <p style="font-size: .5rem; color:black"> Password must be 8 or more characters </p>
+                <p style="font-size: .5rem; color:black"> AND contain at least 1 upper case letter AND 1 number</p>    
+                <p style="font-size: .5rem; color:black">  AND 1 of the following special characters: / * - + ! @ # $ ^ ~ [ ]</p>     
+                    
+
+            </p><p>
+                <label for="password2"> Confirm Password</label>
+                <input class="box-shadow" type="password" name="password" id="password2" placeholder=" Confirm Password" required>
+                <p id="message"></p>
+                <p style="font-size: .5rem; color:black"> Password and confirm password inputs are the same</p>
+
+                
+            </p>
+            <p class="space"></p>
+            <p>  
+                <input type="checkbox" id="age" name="age" required>
+                <label for="age">13+ Years of Age </label><br>
+            </p><p>
+                <input type="checkbox" id="accept rules" name="accept rules" required >
+                <label for="accept rules"> <a class="no-border" href#="agreement.html">Accept TOS and Privacy Rules</a>
+                </label><br>
+            </p><p class="space">
+                <button class="box-shadow">Submit</button>
+            </p>
+        </form>
+
+    <script src="application/public/js/validation.js"></script>
