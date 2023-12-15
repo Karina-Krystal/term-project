@@ -71,7 +71,7 @@ button{
 }
 
 img{
-  padding-left: 473px;
+  
 }
 
 .no-border{
@@ -91,6 +91,10 @@ img{
 
 .center{
   text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .box-shadow{
